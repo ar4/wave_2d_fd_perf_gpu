@@ -6,6 +6,7 @@ import pandas as pd
 from wave_2d_fd_perf_gpu.cuda import (VCuda1, VCuda2, VCuda3, VCuda4, VCuda5)
 from wave_2d_fd_perf_gpu.numba import (VNumba1)
 from wave_2d_fd_perf_gpu.pytorch import (VPytorch1, VPytorch2)
+from wave_2d_fd_perf_gpu.pycuda import (VPycuda1)
 from wave_2d_fd_perf_gpu.test_wave_2d_fd_perf_gpu import (ricker, model_two)
 
 def run_timing_num_steps(num_repeat=10, model_size=1000,
@@ -54,6 +55,7 @@ def _versions():
             {'class': VCuda3, 'name': 'Cuda3'},
             {'class': VCuda4, 'name': 'Cuda4'},
             {'class': VCuda5, 'name': 'Cuda5'},
+            {'class': VPycuda1, 'name': 'Pycuda1'},
             {'class': VPytorch1, 'name': 'Pytorch1'},
             {'class': VPytorch2, 'name': 'Pytorch2'}]
 

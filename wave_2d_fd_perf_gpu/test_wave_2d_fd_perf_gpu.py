@@ -5,6 +5,7 @@ import scipy.special
 from wave_2d_fd_perf_gpu.cuda import (VCuda1, VCuda2, VCuda3, VCuda4, VCuda5)
 from wave_2d_fd_perf_gpu.numba import (VNumba1)
 from wave_2d_fd_perf_gpu.pytorch import (VPytorch1, VPytorch2)
+from wave_2d_fd_perf_gpu.pycuda import (VPycuda1)
 
 def ricker(freq, length, dt, peak_time):
     """Return a Ricker wavelet with the specified central frequency."""
@@ -94,7 +95,7 @@ def model_two(c=1500, dc=1000, freq=25, dx=5, dt=0.0001, nx=[20, 20],
 def versions():
     """Return a list of implementations."""
     return [VNumba1, VPytorch1, VPytorch2, VCuda1, VCuda2, VCuda3, VCuda4,
-            VCuda5]
+            VCuda5, VPycuda1]
 
 
 def test_one_reflector(model_one, versions):
